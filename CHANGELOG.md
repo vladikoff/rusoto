@@ -10,6 +10,7 @@
 - Improve deserializer of XML error responses
 - Adds Serverless Repo service
 - Add Alexa for Business service
+- Add GuardDuty service
 
 ## [0.32.0] - 2018-03-03
 
