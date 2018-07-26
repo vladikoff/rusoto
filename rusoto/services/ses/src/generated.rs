@@ -17262,6 +17262,7 @@ where
         params.put("Version", "2010-12-01");
         SendRawEmailRequestSerializer::serialize(&mut params, "", &input);
         request.set_params(params);
+        println!("SES Request {:?}", request);
 
         let future = self.inner.sign_and_dispatch(request, |response| {
             if response.status != StatusCode::Ok {
