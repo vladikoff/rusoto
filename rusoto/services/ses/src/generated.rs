@@ -17267,6 +17267,7 @@ where
             if response.status != StatusCode::Ok {
                 return future::Either::B(response.buffer().from_err().and_then(|response| {
                     println!("SES Response Status {:?}", response.status);
+                    println!("SES Response Headers {:?}", response.headers);
                     println!("SES Response Body {:?}", String::from_utf8_lossy(response.body.as_ref()));
                     Err(SendRawEmailError::from_body(
                         String::from_utf8_lossy(response.body.as_ref()).as_ref(),
