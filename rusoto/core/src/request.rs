@@ -269,6 +269,8 @@ impl DispatchSignedRequest for HttpClient {
             hyper_headers.set_raw("user-agent".to_owned(), DEFAULT_USER_AGENT.clone());
         }
 
+        hyper_headers.set_raw("content-length".to_owned(), "0");
+
         let mut final_uri = format!("{}://{}{}", request.scheme(), request.hostname(), request.canonical_path());
         if !request.canonical_query_string().is_empty() {
             final_uri = final_uri + &format!("?{}", request.canonical_query_string());
